@@ -10,11 +10,11 @@ function App() {
   const filteredProducts = filterProducts(data.carts);
 
   return (
-    <>
+    <CartProvider>
       <Header />
       <Products products={filteredProducts} />
       {IS_DEVELOPMENT && <Footer />}
-    </>
+    </CartProvider>
   );
 }
 export default App;
