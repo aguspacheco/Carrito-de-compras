@@ -3,7 +3,7 @@ import { AddToCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
 import { useCart } from "../hooks/useCart.js";
 
 export function Products({ products }) {
-  const { AddToCartIcon, RemoveFromCartIcon, cart } = useCart;
+  const { AddToCartIcon, RemoveFromCartIcon, cart } = useCart();
 
   const checkProductInCart = (product) => {
     return cart.some((item) => item.id === product.id);

@@ -4,6 +4,7 @@ import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { IS_DEVELOPMENT } from "./config.js";
 import { useFilters } from "./hooks/useFilters.js";
+import { CartProvider } from "./context/cart.jsx";
 
 function App() {
   const { filterProducts } = useFilters();
