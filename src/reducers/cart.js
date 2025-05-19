@@ -6,7 +6,6 @@ export const CART_ACTION_TYPES = {
   CLEAR_CART: "CLEAR_CART",
 };
 
-// update localStorage with state for cart
 export const updateLocalStorage = (state) => {
   window.localStorage.setItem("cart", JSON.stringify(state));
 };
@@ -17,20 +16,6 @@ const UPDATE_STATE_BY_ACTION = {
     const productInCartIndex = state.findIndex((item) => item.id === id);
 
     if (productInCartIndex >= 0) {
-      const newState = structuredClone(state);
-      newState[productInCartIndex].quantity += 1;
-
-      const newState = state.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        }
-
-        return item;
-      });
-
       const newState = [
         ...state.slice(0, productInCartIndex),
         { ...state[productInCartIndex], quantity: state[productInCartIndex].quantity + 1 },
