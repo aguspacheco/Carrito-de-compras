@@ -6,6 +6,7 @@ import { IS_DEVELOPMENT } from "./config.js";
 import { useFilters } from "./hooks/useFilters.js";
 import { Cart } from "./components/Cart.jsx";
 import { CartProvider } from "./context/cart.jsx";
+import { FiltersContext } from "./context/FiltersContext.jsx";
 
 function App() {
   const { filterProducts } = useFilters();
@@ -15,7 +16,7 @@ function App() {
     const fetchProducts = async () => {
       const response = await fetch("https://dummyjson.com/products");
       const data = await response.json();
-      const allProducts = data.carts.flatMap((cart) => cart.products);
+      const allProducts = data.products;
       setProducts(allProducts);
     };
     fetchProducts();
@@ -32,4 +33,5 @@ function App() {
     </CartProvider>
   );
 }
+
 export default App;
