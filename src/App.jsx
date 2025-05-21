@@ -6,7 +6,6 @@ import { IS_DEVELOPMENT } from "./config.js";
 import { useFilters } from "./hooks/useFilters.js";
 import { Cart } from "./components/Cart.jsx";
 import { CartProvider } from "./context/cart.jsx";
-import { FiltersContext } from "./context/FiltersContext.jsx";
 
 function App() {
   const { filterProducts } = useFilters();
