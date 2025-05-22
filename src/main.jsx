@@ -1,10 +1,18 @@
+// src/main.jsx
+import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import { FiltersProvider } from "./context/FiltersProvider";
+import App from "./App.jsx";
 import "./index.css";
+import { CartProvider } from "./context/cart"; //
+import { FiltersProvider } from "./context/FiltersProvider"; //
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <FiltersProvider>
-    <App />
-  </FiltersProvider>
+  <React.StrictMode>
+    <CartProvider>
+      {" "}
+      <FiltersProvider>
+        <App />
+      </FiltersProvider>
+    </CartProvider>
+  </React.StrictMode>
 );

@@ -4,15 +4,13 @@ import { useCart } from "../hooks/useCart.js";
 import { getAllProductsWithCategory } from "../utils/products.js";
 import productsDate from "../mocks/products.json";
 
-const productsData = getAllProductsWithCategory(productsDate.products);
-console.log(productsData);
-
 export function Products({ products }) {
   const { addToCart, removeFromCart, cart } = useCart();
 
   const checkProductInCart = (product) => {
     return cart.some((item) => item.id === product.id);
   };
+  const allProducts = getAllProductsWithCategory(productsDate.carts);
 
   return (
     <main className="products">
