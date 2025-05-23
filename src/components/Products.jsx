@@ -1,8 +1,6 @@
 import "./Products.css";
 import { AddToCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
 import { useCart } from "../hooks/useCart.js";
-import { getAllProductsWithCategory } from "../utils/products.js";
-import productsDate from "../mocks/products.json";
 
 export function Products({ products }) {
   const { addToCart, removeFromCart, cart } = useCart();
@@ -10,16 +8,15 @@ export function Products({ products }) {
   const checkProductInCart = (product) => {
     return cart.some((item) => item.id === product.id);
   };
-  const allProducts = getAllProductsWithCategory(productsDate.carts);
 
   return (
     <main className="products">
       <ul>
-        {products.slice(0, 10).map((product) => {
+        {products.slice(0, 10).map((product, index) => {
           const isProductCart = checkProductInCart(product);
 
           return (
-            <li key={product.id}>
+            <li key={`${product.id}-${index}`}>
               <img src={product.thumbnail} alt={product.title} />
               <div>
                 <strong>{product.title}</strong> - ${product.price}
