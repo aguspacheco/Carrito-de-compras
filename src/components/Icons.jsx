@@ -1,3 +1,12 @@
+/**
+ * Iconos SVG reutilizables para el carrito de compras.
+ * - Agregar al carrito
+ * - Remover del carrito
+ * - Vaciar carrito
+ * - Ver carrito
+ */
+
+// Representa la accion de agregar un producto al carrito
 export function AddToCartIcon() {
   return (
     <svg
@@ -21,6 +30,7 @@ export function AddToCartIcon() {
   );
 }
 
+// Representa la accion de quitar un producto del carrito
 export function RemoveFromCartIcon() {
   return (
     <svg
@@ -45,6 +55,7 @@ export function RemoveFromCartIcon() {
   );
 }
 
+// Representa la accion de vaciar un carrito
 export function ClearCartIcon() {
   return (
     <svg
@@ -68,6 +79,7 @@ export function ClearCartIcon() {
   );
 }
 
+// Representa el acceso al carrito
 export function CartIcon() {
   return (
     <svg
